@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OSHA Fall Protection Book</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef2f5;
+      margin: 0;
+    }
+    .container {
+      max-width: 860px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    img.header-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .slide {
+      white-space: pre-wrap;
+      line-height: 1.6;
+      font-size: 17px;
+      color: #333;
+      min-height: 400px;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #aaa;
+    }
+    #page-info {
+      font-weight: bold;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Work at Height – OSHA Safety Book</h1>
+  <div id="slide" class="slide"></div>
+  <div class="nav">
+    <button onclick="prevSlide()" id="prevBtn">⬅️ Prev</button>
+    <span id="page-info">1 / 1</span>
+    <button onclick="nextSlide()" id="nextBtn">Next ➡️</button>
+  </div>
+</div>
+
+<script>
+const slides = [
+`<img src="work-at-height.png" alt="Work at Height OSHA" class="header-image" />
+📘 OSHA Definitions (1/5)
+
+1. Fall Management System: System for preventing and controlling fall hazards.
+
+2. Correcting Employer: The employer responsible for resolving jobsite hazards.
+
+3. General Duty Clause: Rule requiring employers to maintain a safe workplace.
+
+4. Controlling Employer: One with supervisory authority for safety on multi-employer sites.
+
+5. OSH Act: The Occupational Safety and Health Act of 1970.
+
+6. Federal Standards: Rules in 29 CFR 1926 (construction) and 1910 (general industry).
+
+7. Creating Employer: The employer that creates a hazardous condition.
+
+8. Qualified Person: Someone with certification/experience to design safety systems.
+`,
+`📘 OSHA Definitions (2/5)
+
+9. Competent Person: Identifies and fixes hazards on site.
+
+10. Exposing Employer: Has workers exposed to hazards.
+
+11. Multi-Employer Policy: Allows citation of more than one employer on shared sites.
+
+12. Consensus Standards: Best practices from ANSI/ASSE.
+
+13. PFAS: A Personal Fall Arrest System to stop falls safely.
+
+14. Anchorage: Point able to support 5,000 lbs per person.
+
+15. Lanyard: Line that connects harness to anchor.
+
+16. Lifeline: Cable or rope allowing movement while tied off.
+`,
+`📘 OSHA Definitions (3/5)
+
+17. Shock Absorber: Limits force during fall arrest.
+
+18. Deceleration Device: Slows a fall (shock pack, rip stitch).
+
+19. Restraint System: Prevents reaching a fall edge.
+
+20. Positioning Device: Holds worker in place with both hands free.
+
+21. Guardrail: Passive barrier at roof/floor edges.
+
+22. Hole Cover: Strong, marked lid over floor opening.
+
+23. Ladder: A vertical set of rungs used to reach heights.
+
+24. Scaffold: Temporary platform for working at height.
+`,
+`📘 OSHA Definitions (4/5)
+
+25. Controlled Access Zone (CAZ): Area for work without standard fall protection.
+
+26. Safety Monitor: Competent person overseeing CAZ safety.
+
+27. Rescue Plan: Written method for retrieving fallen workers.
+
+28. Fall Clearance Distance: Required space below to stop a fall.
+
+29. Training Certification: Record that training has been completed.
+
+30. Job-built Ladder: Site-made ladder that meets OSHA specs.
+
+31. Safety Net System: Nets used under high work areas.
+
+32. Connector: Hardware linking fall arrest components.
+`,
+`📘 OSHA Definitions (5/5)
+
+33. D-ring: Metal loop for attaching lanyards or lines to harness.
+
+34. Harness: Body wear distributing arrest forces.
+
+35. Snap Hook: Self-locking connector for PFAS.
+
+36. Self-Retracting Lifeline (SRL): Device that auto-locks in a fall.
+
+37. Tie-Off Point: A structure used for anchoring a fall system.
+
+38. Leading Edge: Unprotected edge of a roof, deck, or floor.
+
+39. Suspension Trauma: Circulatory problem from hanging in harness too long.
+
+40. Work Positioning Lanyard: Keeps worker stable while hands are free.
+`,
+`📘 Fall Hazards Overview
+
+• Fall hazards include unguarded edges, floor holes, unstable ladders, and wet surfaces.
+
+• OSHA defines "at height" as 6 feet or more in construction.
+
+• Many fatal falls occur from roofs, scaffolds, or ladders.
+
+Always evaluate:
+- Where falls could happen
+- What protection is required
+- Who is at risk
+`,
+`📘 Fall Clearance & Rescue Planning
+
+Fall Clearance = length of fall + deceleration + body height + safety margin.
+
+Rescue Plan:
+✔ Must be written and site-specific  
+✔ Must include procedures for self and team rescue  
+✔ Should be practiced regularly  
+
+Hanging in a harness too long can cause Suspension Trauma.  
+💡 Time to rescue should be under 6 minutes if possible.
+`,
+`📘 PFAS Components & Use
+
+A complete PFAS includes:
+- Full-body harness  
+- Anchorage point  
+- Lanyard (with or without shock absorber)  
+- Lifeline (if needed)
+
+Inspect:
+✔ Before each use  
+✔ After impact  
+✔ Monthly by competent person
+
+Never use waist belts. Always connect to dorsal D-ring.
+`,
+`📘 Guardrails & Ladders
+
+Guardrails:
+• Top rail: 42"  
+• Mid rail: half-height  
+• Must resist 200 lbs force
+
+Ladders:
+• Inspect for cracks, oil, damage  
+• Secure top and bottom  
+• Face the ladder when climbing  
+• Keep three points of contact
+`,
+`📘 Worker Rights & Employer Duties
+
+Workers can:
+✔ File safety complaints  
+✔ Access OSHA documents  
+✔ Refuse dangerous work  
+✔ Receive hazard training
+
+Employers must:
+✔ Provide safe workplace  
+✔ Use certified equipment  
+✔ Provide PPE at no cost  
+✔ Train in a language workers understand
+`,
+`📘 Summary and Final Notes
+
+Fall protection is:
+✔ The law  
+✔ Proven to save lives  
+✔ Your right and responsibility
+
+Common causes of fall deaths:
+• No PFAS  
+• Unprotected edges  
+• Unsafe ladder use
+
+Explore more at [https://www.osha.gov](https://www.osha.gov)
+
+"Safety Pays. Falls Cost." – OSHA
+`,
+];
+
+let current = 0;
+
+function showSlide(index) {
+  document.getElementById("slide").innerHTML = slides[index];
+  document.getElementById("page-info").textContent = `${index + 1} / ${slides.length}`;
+  document.getElementById("prevBtn").disabled = index === 0;
+  document.getElementById("nextBtn").disabled = index === slides.length - 1;
+}
+
+function nextSlide() {
+  if (current < slides.length - 1) {
+    current++;
+    showSlide(current);
+  }
+}
+
+function prevSlide() {
+  if (current > 0) {
+    current--;
+    showSlide(current);
+  }
+}
+
+showSlide(current);
+</script>
+</body>
+</html>

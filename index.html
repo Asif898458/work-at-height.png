@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OSHA Fall Protection Training App</title>
+  <title>OSHA Fall Protection Definitions</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -23,16 +23,10 @@
       color: #2c3e50;
       margin-bottom: 20px;
     }
-    img.header-image {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    }
     .slide {
       white-space: pre-wrap;
       line-height: 1.6;
-      font-size: 17px;
+      font-size: 16px;
       color: #333;
       min-height: 400px;
     }
@@ -61,49 +55,152 @@
 </head>
 <body>
 <div class="container">
-  <h1>Work at Height – OSHA Safety Book</h1>
+  <h1>OSHA Fall Protection – Definitions</h1>
   <div id="slide" class="slide"></div>
   <div class="nav">
     <button onclick="prevSlide()" id="prevBtn">⬅️ Prev</button>
-    <span id="page-info">1 / 1</span>
+    <span id="page-info">1 / 10</span>
     <button onclick="nextSlide()" id="nextBtn">Next ➡️</button>
   </div>
 </div>
+
 <script>
 const slides = [
-  `<img src="work-at-height.png" alt="Work at Height OSHA" class="header-image" />\n📘 OSHA Definitions (1/6)\n\n1. Fall Management System: System for preventing and controlling fall hazards.\n2. Correcting Employer: Resolves jobsite hazards.\n3. General Duty Clause: Requires a safe workplace.\n4. Controlling Employer: Supervisory responsibility for safety.\n5. OSH Act: 1970 law creating OSHA.\n6. Federal Standards: OSHA 29 CFR 1926 & 1910.\n7. Creating Employer: The one that created a hazard.\n8. Qualified Person: Certified to design safety systems.`,
-  `📘 OSHA Definitions (2/6)\n\n9. Competent Person\n10. Exposing Employer\n11. Multi-Employer Policy\n12. ANSI Standards\n13. PFAS\n14. Anchorage\n15. Lanyard\n16. Lifeline`,
-  `📘 OSHA Definitions (3/6)\n\n17. Shock Absorber\n18. Deceleration Device\n19. Restraint System\n20. Positioning Device\n21. Guardrail\n22. Hole Cover\n23. Ladder\n24. Scaffold`,
-  `📘 OSHA Definitions (4/6)\n\n25. Controlled Access Zone\n26. Safety Monitor\n27. Rescue Plan\n28. Clearance Distance\n29. Training Cert.\n30. Job-built Ladder\n31. Safety Net\n32. Connector`,
-  `📘 OSHA Definitions (5/6)\n\n33. D-ring\n34. Harness\n35. Snap Hook\n36. SRL\n37. Tie-Off Point\n38. Leading Edge\n39. Suspension Trauma\n40. Work Positioning Lanyard`,
-  `📘 OSHA Definitions (6/6)\n\n41. Fixed Ladder\n42. Portable Ladder\n43. Warning Line System\n44. Fall Exposure\n45. Floor Hole\n46. Personal Safety Culture\n47. Incident Report\n48. Access/Egress`,
-  `📘 Introduction to Fall Hazards\n\nLeading cause of construction deaths.\nUnderstand: Where, Who, and How to prevent.\nIncludes training, equipment, planning.`,
-  `📘 OSHA Training Standards\n\n- Must be in a language understood\n- Refreshed when hazards or roles change\n- Certified by employer`,
-  `📘 Rescue Planning\n\n- Written and site-specific\n- Fast response (<6 min)\n- Includes suspension trauma prevention`,
-  `📘 Inspection Requirements\n\n- Pre-use checks of harnesses, lanyards, lifelines\n- Monthly documentation\n- Remove damaged gear`,
-  `📘 Guardrails\n\n- Top: 42\" ±3\n- Midrail: half height\n- Toeboard: prevents tools falling`,
-  `📘 Ladder Safety\n\n- 3-point contact\n- Face the ladder\n- Use handrails\n- No top step standing`,
-  `📘 Scaffold Safety\n\n- Inspected daily\n- Full planking\n- Guardrails on all sides`,
-  `📘 PPE Overview\n\n- Helmets\n- Harness\n- Hi-vis vests\n- Boots`,
-  `📘 Personal Fall Arrest System (PFAS)\n\n- Harness\n- Anchor (≥5000 lbs)\n- Shock-absorbing lanyard`,
-  `📘 Fall Clearance Distance\n\nTotal: Free fall + deceleration + body length + margin`,
-  `📘 Controlled Access Zones\n\n- Limited access\n- Safety monitor assigned`,
-  `📘 Safety Culture\n\n- Top-down leadership\n- Accountability\n- Continuous training`,
-  `📘 OSHA Enforcement\n\n- Inspections\n- Citations\n- Penalties`,
-  `📘 Worker Rights\n\n- Access to training & records\n- Refuse unsafe work\n- File complaints`,
-  `📘 Employer Responsibilities\n\n- Provide training\n- Maintain safe site\n- Provide PPE`,
-  `📘 Daily Toolbox Talks\n\n- 5-10 min before shift\n- Reinforce specific hazards`,
-  `📘 Emergency Response\n\n- First aid access\n- Local emergency contacts\n- Rescue plan`,
-  `📘 Fatality Case Study\n\nA worker fell 20 ft. No anchor point used. Outcome: fatal. Prevention: PFAS.`,
-  `📘 Summary\n\nFalls are preventable.\nPlan, Provide, Train.\nUse fall protection at all times.`,
-  `📘 Resources\n\nVisit:\nwww.osha.gov\nwww.cdc.gov/niosh`,
-  `📘 Certificate of Completion\n\n✅ You have completed the OSHA Fall Prevention Book.\nReview slides as needed and stay safe!`
+`📘 OSHA Definitions (1–10)
+
+1. Fall Management System: Includes planning and equipment to prevent falls.
+2. Qualified Person: Certified/experienced person able to design fall systems.
+3. Competent Person: Identifies hazards and takes corrective action.
+4. Creating Employer: Caused the hazard.
+5. Exposing Employer: Exposes their employees to hazards.
+6. Correcting Employer: Responsible for fixing the hazard.
+7. Controlling Employer: Overall jobsite safety authority.
+8. General Duty Clause: Employers must ensure safe conditions.
+9. PFAS: Includes harness, anchor, and shock-absorbing lanyard.
+10. Anchorage: A point that supports 5,000 lbs per worker.`,
+
+`📘 OSHA Definitions (11–20)
+
+11. Lanyard: Connects harness to anchorage or lifeline.
+12. Lifeline: Rope/cable used with PFAS.
+13. Shock Absorber: Reduces force during a fall.
+14. Deceleration Device: Slows the fall.
+15. Guardrail System: Barrier preventing falls.
+16. Toeboard: Stops tools from falling off edges.
+17. Scaffold: Temporary platform for work.
+18. Fixed Ladder: Permanently attached to structure.
+19. Portable Ladder: Moveable ladder like step or extension.
+20. Hole Cover: Prevents trips/falls over floor openings.`,
+
+`📘 OSHA Definitions (21–30)
+
+21. Controlled Access Zone: Limits entry to risky areas.
+22. Safety Monitor: Watches and warns workers near edges.
+23. Warning Line: Visual barrier 6+ feet from edge.
+24. Restraint System: Prevents reaching a fall hazard.
+25. Positioning System: Supports worker to work hands-free.
+26. Safety Net: Catches falling people/materials.
+27. Rescue Plan: Site-specific fall recovery procedure.
+28. Fall Clearance Distance: Total space to arrest a fall.
+29. Harness: Full body support with D-rings.
+30. D-ring: Connector on a harness.`,
+
+`📘 OSHA Definitions (31–40)
+
+31. Snap Hook: Auto-locking connector in PFAS.
+32. SRL: Retracting lifeline that locks during a fall.
+33. Tie-Off Point: Where PFAS is attached.
+34. Leading Edge: Edge of a progressing surface.
+35. Suspension Trauma: Caused by hanging in a harness.
+36. Fall Exposure: Being near a fall hazard unprotected.
+37. Job-Built Ladder: Site-built ladder per standards.
+38. Access/Egress: Safe entry/exit at heights.
+39. Incident Report: Written record of safety incidents.
+40. Personal Safety Culture: Worker safety awareness mindset.`,
+
+`📘 OSHA Definitions (41–50)
+
+41. Fall Prevention: Eliminates fall hazard (guardrails).
+42. Fall Protection: Arrests falls (PFAS).
+43. Horizontal Lifeline: Anchored rope across an area.
+44. Vertical Lifeline: Rope for up/down mobility.
+45. Inspection Checklist: Daily safety review list.
+46. Tag Line: Controls moving tools to prevent drops.
+47. Steel Erection: High-risk structural task with strict fall rules.
+48. Subpart M: OSHA’s fall protection standard (1926.500–503).
+49. Subpart L: Scaffold rules (1926.450–454).
+50. Subpart X: Stair & ladder safety (1926.1050–1060).`,
+
+`📘 OSHA Definitions (51–60)
+
+51. Subpart D: General industry walking surface rule.
+52. ANSI Z359: Fall protection equipment standards.
+53. OSHA 300 Log: Injury/illness record form.
+54. Fatal Four: Leading construction deaths — includes falls.
+55. Fall Arrest Indicator: Device showing fall event.
+56. Work Platform: Safe surface to perform tasks.
+57. Ladder Safety Device: Guard to reduce ladder falls.
+58. Lockout/Tagout: Energy control for equipment.
+59. Red Tag Equipment: Marked unsafe until inspection.
+60. Competency Certificate: Training completion proof.`,
+
+`📘 OSHA Definitions (61–70)
+
+61. Tool Lanyard: Secures tools to prevent dropping.
+62. Hazard Assessment: Evaluates jobsite risks.
+63. Fall Risk Zone: Area within 6 ft of fall edge.
+64. Midrail: Middle bar in guardrails.
+65. Fall Arrest Distance: Total fall + stop distance.
+66. Daily Toolbox Talk: Quick safety huddle before shift.
+67. Competent Person Inspection: Hazard check by trained person.
+68. Equipment Tagging: Shows inspection status.
+69. Work Zone Controls: Barricades and signage.
+70. OSHA Recordkeeping: Tracks safety incidents (29 CFR 1904).`,
+
+`📘 OSHA Definitions (71–80)
+
+71. Fall Hazard: Any condition that could cause a fall.
+72. Free Fall Distance: Distance before PFAS engages.
+73. Deceleration Distance: Distance to stop after falling.
+74. Arresting Force: Force on body during arrest.
+75. Designated Area: Special work area without PFAS.
+76. Exposure Control Plan: Reduces hazardous exposure.
+77. Fall Protection Plan: Site-specific plan for safety.
+78. Rescue Anchor: Point used for recovery systems.
+79. Drop Test: Checks net/harness strength.
+80. Visual Inspection: Daily gear check.`,
+
+`📘 OSHA Definitions (81–90)
+
+81. Full Planking: Complete scaffold coverage.
+82. Leading Edge Work: Work at edge of forming surface.
+83. Fall Arrest Tag: Labels gear after use in fall.
+84. Working Load Limit: Max safe load for gear.
+85. Risk Assessment: Likelihood & severity evaluation.
+86. System Compatibility: Components must work together.
+87. Safety Factor: Extra strength margin in design.
+88. Anchor Plate: Fixed metal anchor on structure.
+89. Rebar Protection: Prevents impalement on steel bars.
+90. Controlled Decking Zone: Special steel erection zone.`,
+
+`📘 OSHA Definitions (91–100)
+
+91. Wind Load: Force from wind on workers/gear.
+92. Body Support: Harness or belt for suspension.
+93. Impact Indicator: Shows if gear was loaded.
+94. Load Snap Hook: Shows overloading visually.
+95. Edge Protection: Guardrails or parapets.
+96. System Redundancy: Backup anchors or ropes.
+97. Trailing Rope Grab: Auto locks during vertical fall.
+98. Ladder Angle Rule: 4:1 ladder lean ratio.
+99. Safety Data Sheet: Chemical safety info sheet.
+100. ICS (Incident Command System): Structure for emergency response.`
 ];
 
 let current = 0;
 
 function showSlide(index) {
-  document.getElementById("slide").innerHTML = slides[index];
+  document.getElementById("slide").innerText = slides[index];
   document.getElementById("page-info").textContent = `${index + 1} / ${slides.length}`;
   document.getElementById("prevBtn").disabled = index === 0;
   document.getElementById("nextBtn").disabled = index === slides.length - 1;
